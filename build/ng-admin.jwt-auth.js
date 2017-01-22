@@ -163,7 +163,7 @@ var ngAdminJWTAuth = angular.module('ng-admin.jwt-auth', ['angular-jwt']);
 ngAdminJWTAuth.config(['$stateProvider', '$httpProvider', function ($stateProvider, $httpProvider) {
 
 	$stateProvider.state('login', {
-		parent: '',
+		parent: 'ng-admin',
 		url: '/login',
 		controller: 'loginController',
 		controllerAs: 'loginController',
@@ -187,7 +187,7 @@ ngAdminJWTAuth.config(['$stateProvider', '$httpProvider', function ($stateProvid
 	});
 
 	$stateProvider.state('logout', {
-		parent: '',
+		parent: 'ng-admin',
 		url: '/logout',
 		controller: 'logoutController',
 		controllerAs: 'logoutController',
