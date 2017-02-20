@@ -12,6 +12,7 @@ var ngAdminJWTAuthService = function($http, jwtHelper, ngAdminJWTAuthConfigurato
 			}).then(function(response) {
 				var payload = jwtHelper.decodeToken(response.data.token);
 				
+				$rootScope.USER = response.data.data
 				localStorage.userData = JSON.stringify(response.data.data);
 				localStorage.userToken = response.data.token;
 				localStorage.userRole = payload.role;
