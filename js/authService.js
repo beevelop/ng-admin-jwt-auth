@@ -34,6 +34,15 @@ var ngAdminJWTAuthService = function($http, jwtHelper, ngAdminJWTAuthConfigurato
 			}
 			return jwtHelper.isTokenExpired(token) ? false : true;
 		},
+
+		getTokenPayload: function () {
+			var token = localStorage.userToken
+			if (token && !jwtHelper.isTokenExpired(token)) {
+				return jwtHelper.decode(token)
+			}
+
+			return false
+		},
 		
 		logout: function() {
 			localStorage.removeItem('userRole');
