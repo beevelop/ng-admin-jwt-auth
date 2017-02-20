@@ -1,4 +1,4 @@
-var ngAdminJWTAuthService = function($http, jwtHelper, ngAdminJWTAuthConfigurator) { 
+var ngAdminJWTAuthService = function($http, jwtHelper, ngAdminJWTAuthConfigurator, $rootScope) { 
 	
 	return {
 		authenticate: function(data, successCallback, errorCallback) {
@@ -14,6 +14,7 @@ var ngAdminJWTAuthService = function($http, jwtHelper, ngAdminJWTAuthConfigurato
 				
 				localStorage.userToken = response.data.token;
 				localStorage.userRole = payload.role;
+				$rootScope.jwtPayload = payload;
 				
 				successCallback(response); 
 				
