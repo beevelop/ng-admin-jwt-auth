@@ -49,6 +49,8 @@ var ngAdminJWTAuthService = function($http, jwtHelper, ngAdminJWTAuthConfigurato
 		logout: function() {
 			localStorage.removeItem('userRole');
 			localStorage.removeItem('userToken');
+			localStorage.removeItem('userData');
+			delete $rootScope.USER;
 			return true;
 		}
 	}
