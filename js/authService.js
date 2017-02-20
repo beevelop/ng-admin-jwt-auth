@@ -44,6 +44,6 @@ var ngAdminJWTAuthService = function($http, jwtHelper, ngAdminJWTAuthConfigurato
 	
 };
 
-ngAdminJWTAuthService.$inject = ['$http', 'jwtHelper', 'ngAdminJWTAuthConfigurator'];
+ngAdminJWTAuthService.$inject = ['$http', 'jwtHelper', 'ngAdminJWTAuthConfigurator', '$rootScope'];
 
 module.exports = ngAdminJWTAuthService;
